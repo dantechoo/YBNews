@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>News System</title>
+
+
+    <link href="{% static 'css/style.css' %}" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div id="wrap">
+    <div id="header">
+        <div class="logo">
+            <img src="{% static 'images/Dwonline.png' %}" width="180" height="40" alt="news"/>
+        </div>
+    </div>
+    <div class="headings">
+        <h2>News Application</h2>
+    </div>
+    {% block content %}
+    {% endblock %}
+    <div id="footer">&copy;Copyright 2021 YBtech sdn bhd YBNews</div>
+</div>
+</body>
+</html>

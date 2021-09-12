@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="contentbox">
+    <table width="100%">
+        <tr>
+            <th align="left"><span class="typeblock">{{ cate }}&nbsp;&nbsp;</span>&nbsp;&nbsp;{{ title}}</th>
+        </tr>
+        <tr>
+            <td>
+                <span class="newsinfo">
+                    <img src="{% static 'images/date.png' %}" alt="" width="16" height="16"/>&nbsp;{{ pub_time }} &nbsp;
+                    <img src="{% static 'iamges/user.png' %}" alt="" width="16" height="16"/>&nbsp;{{ nick_name }}
+                    <p>&nbsp;&nbsp;{{ message_content }}</p>
+                </span>
+            </td>
+        </tr>
+    </table>
+    <div class="topfunction">
+        <a href="/index/3/" title="back_to_main_page">
+            <img src="{% static 'images/home.png' %}" alt="back_to_main" width="86" height="32"/>
+        </a>
+    </div>
+</div>
+{% endblock %}

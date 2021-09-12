@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="contentbox">
+    <table>
+        <tr>
+            <th align="left">type</th>
+            <th align="left">title</th>
+            <th align="left">time</th>
+            <th align="left">click times</th>
+        </tr>
+        {% for unit in news_details %}
+        <tr class="alt">
+            <td><div class="typeblock">[{{ unit.cat }}]</div></td>
+            <td><a href="/detail/{unit.id}">{{ unit.title }}</a></td>
+            <td>{{ unit.pubtime }}</td>
+            <td>{{ unit.press }}</td>
+        </tr>
+        {% empty %}
+        <div class="status warning">
+            <p><img src="{% static 'images/icon_warning.png' %}" alt="Warning"><span>Warning</span>current news database not any data!</p>
+        </div>
+        {% endfor %}
+    </table>
+    <div class="topfunction">
+        {% if current_page > 1 %}
+          <a href="/index/1/" title="last_page">
+              <img src="{% static 'images/prevpage.png' %}" alt="last_page" width="64" height="24" />
+          </a>
+        {% endif %}
+        {% if current_page < total_page %}
+        <a href="/index/2/" title="next_page">
+            <img src="{% static 'images/nextpage.png' %}" alt="next_page" width="64" height="24"/>
+        </a>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}
